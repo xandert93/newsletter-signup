@@ -38,7 +38,6 @@ app.post('/', (req, res) => {
   };
 
   const request = https.request(url, options, (response) => {
-    response.on('data', (data) => console.log(JSON.parse(data)));
     response.statusCode === 200
       ? res.redirect('/pages/success.html')
       : res.redirect('/pages/failure.html');
